@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_crud/event/food_event.dart';
 import 'package:bloc_crud/model/food.dart';
+import 'dart:async';
+import 'dart:core';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,9 +25,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class FoodBloc extends Bloc<FoodEvent, List<Food>> {
   FoodBloc(List<Food> initialState) : super(initialState);
 
+  @override
   List<Food> get initialState => <Food>[];
 
-  Stream<List<Food>?>? mapEventToState(FoodEvent event) async* {
+  @override
+  Stream<List<Food>> mapEventToState(FoodEvent event) async* {
     switch (event.eventType) {
       case EventType.add:
         List<Food> newState = List.from(state);

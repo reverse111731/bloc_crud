@@ -10,13 +10,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_crud/food_form.dart';
 
 void main() {
-  //this is
-  BlocOverrides.runZoned(
-    () {
-      // Use cubits...
-    },
-    blocObserver: FoodBlocObserver(),
-  );
+  // BlocOverrides.runZoned(
+  //   () {
+  //     // Use cubits...
+  //   },
+  //   blocObserver: FoodBlocObserver(),
+  // );
   runApp(const MyApp());
 }
 
